@@ -1,51 +1,60 @@
 <!DOCTYPE html>
-<html lang=”en”>
+<html lang="en">
 <head>
-    <meta charset=”UTF-8″>
-    <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
-    <link rel="stylesheet" type="text/css" href="ourCss.css">
-    <title>Calculator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Calculator</title>
 </head>
 <body>
 
-<div class="calculator">
+  <div class="container">
 
-    <input type="text" class="display" disabled>
+    <div class="calculator">
 
-    <div class="keys">
+      <div class="display">
+        <textarea type="text" id="display"></textarea>
+      </div>
 
-        <div class="row">
-            <button value="7">7</button>
-            <button value="8">8</button>
-            <button value="9">9</button>
-            <button value="+" class="operator">+</button>
-        </div>
+      <div class="clear-btn">
+        <button class="key" value="C" id="transparent">C</button>
+        <button class="key" value="D" id="transparent"><</button>
+      </div>
 
-        <div class="row">
-            <button value="4">4</button>
-            <button value="5">5</button>
-            <button value="6">6</button>
-            <button value="-" class="operator">-</button>
-        </div>
+      <div class="keypad">
+        <button value="7" class="key">7</button>
+        <button value="8" class="key">8</button>
+        <button value="9" class="key">9</button>
+        <button value="+" class="operator">+</button>
+      </div>
 
-        <div class="row">
-            <button value="1">1</button>
-            <button value="2">2</button>
-            <button value="3">3</button>
-            <button value="*" class="operator">*</button>
-        </div>
+      <div class="keypad">
+        <button value="4" class="key">4</button>
+        <button value="5" class="key">5</button>
+        <button value="6" class="key">6</button>
+        <button value="-" class="operator">-</button>
+      </div>
 
-        <div class="row">
-            <button value="C" class="operator">C</button>
-            <button value="0">0</button>
-            <button value="/" class="operator">/</button>
-            <button value="=" class="operator">=</button>
-        </div>
+      <div class="keypad">
+        <button value="1" class="key">1</button>
+        <button value="2" class="key">2</button>
+        <button value="3" class="key">3</button>
+        <button value="*" class="operator">*</button>
+      </div>
+
+      <div class="keypad">
+        <button value="." class="key">.</button>
+        <button value="0" class="key">0</button>
+        <button value="=" class="key" id="eq">=</button>
+        <button value="/" class="operator">/</button>
+      </div>
+
 
     </div>
 
-</div>
+  </div>
 
-<script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
