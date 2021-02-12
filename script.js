@@ -15,10 +15,6 @@ let isEnterKeyPressed = function(e){
   }
 }
 
-let getPosition = function (string, subString, index) {
-  return string.split(subString, index).join(subString).length;
-}
-
 let calculate = function(e) {
   // current clicked buttons value
   const clicked = event.target.value;
@@ -28,7 +24,7 @@ if (clicked === "=") {
     // check if the display is not empty then only do the calculation
     if (display.value !=="") {
 
-      // Check for minusing with negative numbers
+      // Check for subtracting with negative numbers
       if (display.value.includes("--")) {
         let str = display.value.replace("--", "+");
         display.value = eval(str);
