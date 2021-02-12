@@ -59,6 +59,7 @@ html, body {
   overflow: hidden;
   resize: none;
   outline: none;
+  text-shadow: 1px 1px 4px #2222222f;
 }
 
 
