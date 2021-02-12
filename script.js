@@ -54,7 +54,7 @@ if (clicked === "=") {
   if (display.value.length >= 9){
     display.style.fontSize="350%";
   }
-  if (display.value.length >= 11){
+  if (display.value.length >= 10){
     display.style.fontSize="200%";
   }
 }
