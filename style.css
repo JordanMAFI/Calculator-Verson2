@@ -1,17 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,600;1,700&display=swap');
+/*@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,600;1,700&display=swap");*/
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-html, body {
+html {
   background: radial-gradient(#555555, #000000);
+  min-height: 540px;
+  overflow: hidden;
+}
+
+body {
   height: 100vh;
   width: 100vw;
-  color: #E5E5E5;
+  color: #e5e5e5;
   font-family: sans-serif;
-  min-height: 540px;
+  animation: pageLoad 500ms linear;
+}
+
+@keyframes pageLoad {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.3);
+  }
+  90% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .container {
@@ -23,31 +45,63 @@ html, body {
 }
 
 .psycomode {
-	background: linear-gradient(
-    -90deg, #47CFA8, #4792CF, #4750CF, #8647CF, #E14E62, #EE7752,  #EEA352, #EEC252, #EEE152, #D2E54F, #71D549
-    );
-	background-size: 900% 900%;
-	animation: gradient 30s linear infinite;
+  background: linear-gradient(
+    -90deg,
+    #47cfa8,
+    #4792cf,
+    #4750cf,
+    #8647cf,
+    #e14e62,
+    #ee7752,
+    #eea352,
+    #eec252,
+    #eee152,
+    #d2e54f,
+    #71d549
+  );
+  background-size: 12800% 100%;
+  animation: gradient 40s ease infinite;
   opacity: 90%;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+::selection {
+  background-color: #a73434bf;
+}
+
+.calculator {
+  width: 368px;
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /*background-color: #1f1f1f;*/
+  box-shadow: 2px 2px 12px #000;
+}
+
+.display {
+  display: flex;
+  width: inherit;
+  height: auto;
 }
 
 #display {
-  color: #F8F8F8;
+  color: #f8f8f8;
   font-size: 350%;
   font-weight: 700;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-style: italic;
   width: inherit;
   max-height: 140px;
@@ -55,31 +109,55 @@ html, body {
   background-color: transparent;
   border: none;
   padding: 30px 30px;
-  caret-color: #1F1F1F;
+  caret-color: #1f1f1f;
   overflow: hidden;
   resize: none;
   outline: none;
   text-shadow: 1px 1px 4px #2222222f;
 }
 
-
-.calculator {
-    width: 368px;
-    height: 440px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #1F1F1F;
-    box-shadow: 2px 2px 12px #000;
+.keypad {
+  background-color: #060606;
+  width: inherit;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
 }
 
-.keypad {
-    background-color: #060606;
-    width: inherit;
-    flex-direction: row;
-    flex-wrap: wrap;
-    display: flex;
+.key,
+.operator {
+  width: 92px;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #1f1f1f;
+  font-size: 2em;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 600;
+  outline: none;
+  transition: background 500ms ease;
+  color: #fefefe;
+}
+
+.keypad .key:hover,
+.keypad .operator:hover {
+  cursor: pointer;
+  font-weight: bolder;
+  background: coral;
+  color: #fefefe;
+}
+
+.keypad .key {
+  background: #060606;
+}
+
+.keypad .operator {
+  background: #131313;
+}
+
+#eq {
+  background-color: #a73434;
 }
 
 .clear-btn {
@@ -87,89 +165,80 @@ html, body {
   flex-direction: row;
   flex-wrap: wrap;
   display: flex;
-  background: transparent;
-  background: linear-gradient(
-    -90deg, #47CFA8, #4792CF, #4750CF, #8647CF, #E14E62, #EE7752,  #EEA352, #EEC252, #EEE152, #D2E54F, #71D549
-    );
-  background-size: 900% 900%;
-  animation: gradient 30s linear infinite;
+  background: #444444af;
   opacity: 80%;
 }
 
-.key, .operator {
-    width: 92px;
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border: 1px solid #1F1F1F;
-    font-size: 2em;
-    font-family: "Exo 2", sans-serif;
-    font-weight: 600;
-    outline: none;
+.clear-btn .key {
+  cursor: pointer;
 }
 
-.key {
-    background:  #060606;
-    color: #fefefe;
-}
-
-.operator {
-    background-color: #131313 !important;
-    color: #ccc;
-}
-
-#eq {
-    background-color: #a73434 !important;
-}
-
-.display {
-    display: flex;
-    width: inherit;
-    height: auto;
-}
-
-::selection {
-    background-color: #a73434bf;
-}
-.key:hover, .operator:hover  {
-    cursor: pointer;
-    font-weight: bolder;
-    background: coral !important;
-    color: #fefefe;
-}
-
-#transparent {
-  background: transparent !important;
-  color: #fefefe;
+.clear-btn .transparent {
+  color: #ccc;
   font-size: 17px;
   border: none;
+  background: transparent;
+  transition: color 500ms ease, background 500ms ease;
 }
 
-#transparent:hover {
-  color: #000;
+.clear-btn .transparent:hover {
+  color: #fff;
+  background: #333333ee;
+}
+
+#notification {
+  flex-direction: row;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#notification p {
+  font-size: 12px;
+  color: #dddddd;
+  padding: 21px 12px;
+  animation: pulse 1000ms ease infinite;
+}
+
+@keyframes pulse {
+  0% {
+    color: #ccc;
+    transform: scale(0.9);
+  }
+  50% {
+    color: #ffffff;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+    color: #ccc;
+  }
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 600ms linear;
+}
+.show {
+  opacity: 1;
+  transition: opacity 600ms linear;
 }
 
 #calc {
-  fill: #fff;
+  fill: #444;
 }
-#calc::after{
-  content: "34234234234234";
-}
-.img-container {
+
+.calc {
   position: absolute;
   right: 10px;
-  top: 10px;
+  bottom: 10px;
 }
-.img-container::before {
-  content: "by Jordan Mafi and Bernard Solien";
-  font-family: 'Exo 2', sans-serif;
-  font-size: 1em;
+
+.calc::after {
+  content: "Jordan Mafi and Bernard Solien";
+  font-family: "Exo 2", sans-serif;
+  font-size: 0.7em;
+  color: #444;
   padding: 0 5px 0 0;
-  vertical-align: 40%;
-}
-@media(max-width:960px){
-  .image-container {
-    display: hidden;
-  }
+  vertical-align: 60%;
 }
